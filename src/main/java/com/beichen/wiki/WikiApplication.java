@@ -6,6 +6,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.core.env.Environment;
 import org.slf4j.Logger;
 
+/**
+ * 这个注解里面有个ComponentScan注解，可以扫描当前路径及以下的文件，所以旁边的controller包里面的TestController不需要加这个
+ * 如果不在一个路径下的话这个类就要单独加一个   ComponentScan注解
+ */
 @SpringBootApplication
 public class WikiApplication {
     private static final Logger LOG = LoggerFactory.getLogger(WikiApplication.class);
