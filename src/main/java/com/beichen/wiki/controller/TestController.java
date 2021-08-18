@@ -1,6 +1,7 @@
 package com.beichen.wiki.controller;
 
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -13,9 +14,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class TestController {
 
+    /**
+     * 读取自定义配置项
+     * @return
+     */
+    @Value("${test.hello}")
+    private String testhello;
+
     @RequestMapping(value = "/hello",method = RequestMethod.GET)
     public String hello(){
-        return "Hello world";
+        return "Hello world" + testhello;
     }
 
     @PostMapping("/hello")
