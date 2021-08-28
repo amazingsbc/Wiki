@@ -23,11 +23,11 @@ public class TestController {
 
     @RequestMapping(value = "/hello",method = RequestMethod.GET)
     public String hello(){
-        return "Hello world" + testhello;
+        return "Hello world123";
     }
 
     @PostMapping("/hello")
     public String helloPost(String map){
-        return "hello world " + map;
+        return "hello world ";
     }
 }
