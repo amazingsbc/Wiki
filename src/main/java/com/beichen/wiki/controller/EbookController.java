@@ -1,8 +1,9 @@
 package com.beichen.wiki.controller;
 
 
-import com.beichen.wiki.domain.Ebook;
+import com.beichen.wiki.req.EbookReq;
 import com.beichen.wiki.resp.CommonResp;
+import com.beichen.wiki.resp.EbookResp;
 import com.beichen.wiki.service.EbookService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,9 +30,9 @@ public class EbookController {
 
 
     @GetMapping("/list")
-    public CommonResp list(){
-        CommonResp<List<Ebook>> resp = new CommonResp();
-        List<Ebook> list = ebookService.list();
+    public CommonResp list(EbookReq req){
+        CommonResp<List<EbookResp>> resp = new CommonResp();
+        List<EbookResp> list = ebookService.list(req);
         resp.setContent(list);
 //        resp.setMessage("ebookmessage");
         return resp;
